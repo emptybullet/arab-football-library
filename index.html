@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="المكتبة العربية لكرة القدم — الأرشيف الشامل لكرة القدم العربية، إحصاءات وتاريخ كأس العرب منذ 1963">
+<title>المكتبة العربية لكرة القدم | Arab Football Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────── -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo" onclick="showHome()">
+      <span class="logo-afl">AFL</span>
+      <span class="logo-divider">|</span>
+      <span class="logo-text">المكتبة العربية لكرة القدم</span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link active" onclick="showSection('competitions')" href="#">البطولات</a>
+      <a class="nav-link" onclick="showSection('teams')" href="#">المنتخبات</a>
+      <a class="nav-link" onclick="showSection('history')" href="#">السجل التاريخي</a>
+      <a class="nav-link" onclick="showSection('records')" href="#">الأرقام القياسية</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-btn" onclick="alert('قريباً')">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">الأرشيف الشامل · منذ 1963</div>
+    <h1 class="hero-title">المكتبة العربية<br><span class="hero-accent">لكرة القدم</span></h1>
+    <p class="hero-sub">كل مباراة · كل هدف · كل بطولة · موثّق ومُحكم</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hs-n">11</span><span class="hs-l">نسخة</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="hs-n">200+</span><span class="hs-l">مباراة</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="hs-n">22</span><span class="hs-l">منتخباً عربياً</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="hs-n">6</span><span class="hs-l">أبطال مختلفون</span></div>
+    </div>
+    <button class="cta-btn" onclick="showSection('competitions')">استكشف الأرشيف ←</button>
+  </div>
+  <div class="hero-scroll-hint">▼</div>
+</section>
+
+<!-- ── MAIN CONTENT ────────────────────────────── -->
+<main class="main-content">
+
+  <!-- COMPETITIONS SECTION -->
+  <section class="section" id="section-competitions">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">كأس العرب</h2>
+        <p class="section-sub">اختر نسخة لاستعراض كامل المباريات والإحصاءات</p>
+      </div>
+      <div class="editions-grid" id="editions-grid"></div>
+    </div>
+  </section>
+
+  <!-- EDITION DETAIL -->
+  <section class="section hidden" id="section-edition">
+    <div class="section-inner">
+      <button class="back-btn" onclick="backToEditions()">← العودة لجميع النسخ</button>
+      <div id="edition-hero-block"></div>
+      <div class="edition-layout">
+        <aside class="edition-sidebar" id="edition-sidebar"></aside>
+        <div class="edition-main" id="edition-main"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATCH DETAIL -->
+  <section class="section hidden" id="section-match">
+    <div class="section-inner">
+      <button class="back-btn" id="match-back-btn">← العودة للمباريات</button>
+      <div id="match-detail-block"></div>
+    </div>
+  </section>
+
+  <!-- TEAMS SECTION -->
+  <section class="section hidden" id="section-teams">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">المنتخبات العربية</h2>
+        <p class="section-sub">22 منتخباً عربياً — سجلاتهم في كأس العرب</p>
+      </div>
+      <div class="teams-grid" id="teams-grid"></div>
+    </div>
+  </section>
+
+  <!-- HISTORY SECTION -->
+  <section class="section hidden" id="section-history">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">السجل التاريخي</h2>
+        <p class="section-sub">جميع نسخ كأس العرب من 1963 إلى 2021</p>
+      </div>
+      <div class="history-table-wrap">
+        <table class="history-table" id="history-table"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECORDS SECTION -->
+  <section class="section hidden" id="section-records">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">الأرقام القياسية</h2>
+        <p class="section-sub">أرقام وإحصاءات فريدة في تاريخ كأس العرب</p>
+      </div>
+      <div class="records-grid" id="records-grid"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">AFL</div>
+    <p class="footer-text">المكتبة العربية لكرة القدم — مشروع أرشفة مستقل · البيانات من RSSSF</p>
+    <p class="footer-copy">© 2024 Arab Football Library</p>
+  </div>
+</footer>
+
+<script src="data/arabcup.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
